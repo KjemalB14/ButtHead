@@ -17,6 +17,7 @@ public class LevelFinish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Once the player reaches the flag a sound effect is played and there is a 2 second delay before the next Scene loads
         if (collision.gameObject.CompareTag("Player") && !levelCompletion) 
         {
             finishSound.Play();
@@ -25,6 +26,7 @@ public class LevelFinish : MonoBehaviour
         }
     }
 
+    //Loads the next Scene
     private void LoadNextLevel()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
